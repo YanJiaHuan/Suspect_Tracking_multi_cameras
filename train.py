@@ -168,7 +168,7 @@ def evaluate_2():
     ###========================LOAD WEIGHTS ============================###
     G.load_weights(os.path.join(checkpoint_dir, 'g.npz'), format='npz_dict')
     G.set_eval()
-    valid_hr_img = tlx.vision.load_image('img_face_1.jpg')
+    valid_hr_img = tlx.vision.load_image('gan.jpg')
     valid_lr_img = np.asarray(valid_hr_img)
     hr_size1 = [valid_lr_img.shape[0], valid_lr_img.shape[1]]
     # valid_lr_img = cv2.resize(valid_lr_img, dsize=(hr_size1[1] // 4, hr_size1[0] // 4))
@@ -218,7 +218,7 @@ def Generate_high_resolution(img):
     tlx.vision.save_image(out, file_name='Generated.png', path=save_dir)
 
 
-Generate_high_resolution('./img_face_1.jpg')
+Generate_high_resolution('./gan.jpg')
 
 # if __name__ == '__main__':
 #     import argparse
